@@ -1,0 +1,124 @@
+<ion-header>
+
+    <ion-navbar>
+
+        <ion-toolbar>
+
+            <ion-title style="text-align:center">
+                <ion-icon name="calendar" style="color:white"></ion-icon>
+                <span style="color: white"> Schedule</span>
+
+
+            </ion-title>
+
+            <button ion-button menuToggle color="light">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-toolbar>
+
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding >
+
+    <p><strong>1. Select the date:      [ Currently Date ]  </strong></p>
+        <p><strong>
+            2. Schedule the trip:   [ SCHEDULE ]
+        </strong></p>
+  
+    
+
+    
+
+
+    <span ion-datepicker (ionChanged)="event($event)" (ionCanceled)="Log()" okText="Ok" [value]="localDate" [min]="min" full="true" calendar="true" clear class="ScheduleDate">
+        <button class="buttonLoc" ion-button color="dark" small icon-left><ion-icon name="calendar"></ion-icon>{{localDate | date:'dd-MM-yyyy' }}</button>     
+    </span>
+    <button ion-button   class="buttonLoc" color="danger"   (click)="presentConfirm()">Schedule This Trip</button>
+
+
+    <ion-list style="background-color: cornflowerblue">
+      
+            <ion-item style="background-color: cornflowerblue">
+                
+                <ion-card style="background-color: cornflowerblue">
+
+                    <ion-item style="background-color: cornflowerblue">
+                        <button class="buttonLoc" ion-button color="dark" small icon-left><ion-icon name="ios-pin"></ion-icon>{{country}}</button>
+                        <ion-avatar item-left>
+                            <img src="./assets/images/sally.jpg" />
+                        </ion-avatar>
+                        <p class="text-right"><b>{{name}}</b></p>
+                        <p class="text-right"><b>{{fee}}</b></p>
+                        <p class="text-right"><b>{{season}}</b></p>
+                    </ion-item>
+
+                    <img src="./assets/images/italy.jpg" />
+
+                    <ion-card-content>
+                        <p style="color: black">{{description}}</p>
+
+                    </ion-card-content>
+                      <ion-item style="background-color: cornflowerblue">
+                       <span item-left>Approximate Fee:</span>
+                       <span item style="margin-left: 70px">{{fee}}</span>
+</ion-item>
+                <ion-item style="background-color: cornflowerblue">
+                     <span item-left>Season:</span>
+                     <span item style="margin-left: 130px">{{season}}</span>
+</ion-item>
+
+                <ion-item style="background-color: cornflowerblue">
+                     <span item-left>Tour Country:</span>
+                     <span item style="margin-left: 90px">{{country}}</span>
+
+</ion-item>
+
+             
+                <ion-item style="background-color: cornflowerblue">
+                    <span item-left>Tour Name:</span>
+                     <span item style="margin-left: 90px">{{name}}</span>
+
+</ion-item>
+
+
+                    <ion-list>
+                        <ion-item style="background-color: cornflowerblue">
+
+
+                            <b> 7 STEPS: </b>
+                            <h3> Click 7 steps tag to see tour details </h3>
+
+                            <p>
+                                <ion-icon name="bus"></ion-icon>
+                                <ion-icon name="bus"></ion-icon>
+                                <ion-icon name="restaurant"></ion-icon>
+                                <ion-icon name="eye"></ion-icon>
+                                <ion-icon name="eye"></ion-icon>
+                                <ion-icon name="cart"></ion-icon>
+                                <ion-icon name="restaurant"></ion-icon>
+                                <ion-icon name="home"></ion-icon>
+
+                            </p>
+
+
+                        </ion-item>
+                    </ion-list>
+
+
+
+
+                </ion-card>
+            </ion-item>
+ </ion-list>
+
+  
+
+   
+  
+   
+    
+
+</ion-content>

@@ -1,0 +1,83 @@
+<!--
+  Generated template for the Profile page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+     <button ion-button menuToggle style="color:white">
+     <ion-icon name="menu" ></ion-icon>
+    </button>
+
+    <ion-title>
+        <ion-icon name="ios-contact" style="color:white"></ion-icon>
+      <span style = "color: white" >Profile</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+ 
+    <ion-list>
+        <ion-item style="background-color: lightgreen">
+
+            <ion-avatar item-left>
+                <img src="./assets/images/sally.jpg" />
+            </ion-avatar>
+
+            <span style="color: white">{{username}}</span>
+            <p>
+                <span style="color: white">
+                    <ion-icon name="ios-star"></ion-icon>
+                    <ion-icon name="ios-star"></ion-icon>
+                    <ion-icon name="ios-star"></ion-icon>
+
+
+                </span>
+            </p>
+
+
+            <p> <ion-icon class="custom-icon" name="ios-chatbubbles" (click)="goChatPage()"></ion-icon> </p>
+            <p><strong>Click Chat icon and Start a Chat</strong></p>
+        </ion-item>
+    </ion-list>
+
+<ion-list style="background-color: lightGreen">
+
+    <h3>Created Trips</h3>
+
+    <ion-item-sliding *ngFor="let trip of displayList" >
+       
+    <ion-item style="background-color: lightGreen" (click)="itemClicked(trip.id)">{{trip.name}}</ion-item>
+
+    <ion-item-options>
+      <button ion-button color = "dark" (click)="editItem(trip.id)"><ion-icon name="create">Edit</ion-icon></button>
+      <button ion-button color = "green" (click)="removeItem(trip.id)"><ion-icon name="trash">Delete</ion-icon></button>
+    </ion-item-options>
+
+  </ion-item-sliding>
+
+  <button ion-button clear (click)="goCreatedPage(item)">List All Created Trips</button>
+ 
+ </ion-list>
+
+<ion-list no-lines style="background-color: lightGreen">
+
+  <h3>Visited Trips</h3>
+
+  <ion-item style="background-color: lightGreen">Lovely Austria Tour</ion-item>
+  <ion-item style="background-color: lightGreen">Beautiful Moments in Sweden</ion-item>
+  <ion-item style="background-color: lightGreen">Explore France</ion-item>
+   <ion-item style="background-color: lightGreen">Wonder in Aachen</ion-item>
+ 
+
+</ion-list>
+
+
+ 
+  
+
+</ion-content>

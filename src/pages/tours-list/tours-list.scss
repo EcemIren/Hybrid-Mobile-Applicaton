@@ -1,0 +1,34 @@
+page-tours-list {
+
+.toolbar-background {
+
+    background-color: cornflowerblue;
+}
+
+ .toolbar
+ {
+    text-align:center;
+ }
+
+ .buttonLoc
+ {
+	top: -5px;
+	left: -5px;
+ }
+
+ .buttonStyle
+ {
+   margin-bottom: 0px;
+   margin-left: 0px;
+   height: 5rem;
+ }
+
+ .item-md p
+ {
+  white-space: normal;
+ }
+
+ ion-content{
+    background-image: url('../../assets/images/t2.png');
+}
+}

@@ -1,0 +1,29 @@
+page-edit-tour {
+
+   .error-message .item-inner {
+    border-bottom: 0 !important;
+  }
+
+
+   .toolbar-background {
+
+    background-color: #00C957;
+   }
+
+  .item-input .label-md,.item-select .label-md
+  {
+    color:#444;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .toolbar
+  {
+    text-align:center;
+  }
+
+  .invalid {
+    border-bottom: 1px solid #FF6153;
+  }
+
+}

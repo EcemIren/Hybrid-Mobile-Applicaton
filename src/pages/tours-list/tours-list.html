@@ -1,0 +1,119 @@
+<!--
+  Generated template for the ToursList page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+     <button ion-button menuToggle  style="color:white">
+     <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+        <ion-icon name="ios-globe" style="color:white"></ion-icon>
+      <span style = "color: white" >Discover</span>
+    </ion-title>
+  </ion-navbar>
+   
+</ion-header>
+
+<ion-content >
+    
+    <form id="search">
+
+        <ion-searchbar autocorrect="on" style="background-color: cornflowerblue"  [(ngModel)]="term"  [ngModelOptions]="{standalone: true}" placeholder="Search Country or Tour Name :) "></ion-searchbar>
+ </form>
+
+
+        <ion-item>
+            <ion-label>Select Season</ion-label>
+            <ion-select [(ngModel)]="season" (ionChange)="pickSeason(season)">
+                <ion-option value="spring">spring </ion-option>
+                <ion-option value="winter">winter</ion-option>
+                <ion-option value="summer">summer</ion-option>
+                <ion-option value="autumn">autumn</ion-option>
+            </ion-select>
+        </ion-item>
+   
+       
+        <ion-item>
+            <ion-label>Select Price By Each Range </ion-label>  
+
+            <ion-select [(ngModel)]="fee" (ionChange)="pickFee(value)">
+                <ion-option value="1">Start with 1-2-3</ion-option>
+
+            </ion-select>
+            <ion-select [(ngModel)]="fee" (ionChange)="pickFee1(value)">
+                <ion-option value="4">Start with 4-5-6</ion-option>
+
+            </ion-select>
+
+         
+            <ion-select [(ngModel)]="fee" (ionChange)="pickFee2(value)">
+                <ion-option value="7">Start with 7-8-9</ion-option>
+
+            </ion-select>
+        </ion-item>
+    
+    
+
+  
+
+
+
+<ion-list>
+ 
+
+        <ion-card *ngFor="let item of (tourList| async |search:term)" style="background-color: cornflowerblue" (click)="goDetailPage(item.$key,item.fee,item.season,item.name,item.country,item.description,false)">
+
+            <button class="buttonLoc" ion-button color="dark" small icon-left><ion-icon name="ios-pin"></ion-icon>{{item.country}}</button>
+
+            <ion-item style="background-color: cornflowerblue">
+                <h1>{{item.name}}</h1>
+                <ion-avatar item-left>
+                    <img src="./assets/images/sally.jpg" />
+                </ion-avatar>
+                <h2>By {{item.user.username}}</h2>
+                <p class="text-right"><b>Cost: {{item.fee}}&euro;</b></p>
+                <p>Season: {{item.season}}</p>
+            </ion-item>
+
+            <img src="./assets/images/italy.jpg" />
+
+            <ion-card-content>
+                <p>{{item.description}}</p>
+            </ion-card-content>
+
+            <ion-row>
+                <ion-col>
+                    <button ion-button icon-left clear small>
+                        <ion-icon name="thumbs-up"></ion-icon>
+                        <div>12 Likes</div>
+                    </button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button icon-left clear small>
+                        <ion-icon name="text"></ion-icon>
+                        <div>4 Comments</div>
+                    </button>
+                </ion-col>
+                <ion-col center text-center>
+                    <button ion-button icon-left clear small>
+                        <ion-icon name="text"></ion-icon>
+                        <div>5 favourite</div>
+                    </button>
+                </ion-col>
+            </ion-row>
+
+            <button ion-button class="buttonStyle" color="dark">Tour Details</button>
+
+        </ion-card>
+
+</ion-list>
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,130 @@
+<!--
+  Generated template for the Food page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+   <button ion-button menuToggle>
+     <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+        <ion-icon name="restaurant" style="color:white"></ion-icon>
+      <span style = "color: white" >Food Step</span>
+    </ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form [formGroup]="createFoodForm" (submit)="onSubmit(createFoodForm.value)">
+
+<ion-item>
+    <ion-label floating>Title</ion-label>
+    <ion-input #title formControlName="title" (change)= "elementChanged(title)" 
+    [class.invalid]="!createFoodForm.controls.title.valid && (titleChanged || submitAttempt)"></ion-input>
+  </ion-item>
+
+  <ion-item class="error-message" *ngIf="!createFoodForm.controls.title.valid  && (titleChanged || submitAttempt)">
+      <p>Please enter a valid title</p>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label floating>Name</ion-label>
+     <ion-input #name formControlName="name" (change)="elementChanged(name)"
+    
+    [class.invalid]="!createFoodForm.controls.name.valid && (nameChanged || submitAttempt)"></ion-input>
+  </ion-item>
+
+  <ion-item class="error-message" *ngIf="!createFoodForm.controls.name.valid  && (nameChanged || submitAttempt)">
+     <p>Please enter a valid name</p>
+   </ion-item>
+
+
+  <ion-item>
+   <ion-label>Food Shop Type</ion-label>
+   <ion-select multiple="false" formControlName="shopType">
+     <ion-option value="restaurant" selected="true">Restaurant</ion-option>
+     <ion-option value="cafe">Cafe</ion-option>
+     <ion-option value="fastFood">Fast Food</ion-option>
+   </ion-select>
+  </ion-item>
+
+    <ion-item>
+        <ion-label floating>Description</ion-label>
+        <ion-input #description formControlName="description" (change)="elementChanged(description)"
+                   [class.invalid]="!createFoodForm.controls.description.valid && (descriptionChanged || submitAttempt)"></ion-input>
+    </ion-item>
+
+    <ion-item class="error-message" *ngIf="!createFoodForm.controls.description.valid  && (descriptionChanged || submitAttempt)">
+        <p>Please enter a valid description</p>
+    </ion-item>
+
+   <ion-item>
+    <ion-label floating>Cost</ion-label>
+    <ion-input #cost formControlName="cost" (change)="elementChanged(cost)"
+        
+        [class.invalid]="!createFoodForm.controls.cost.valid && (costChanged || submitAttempt)"></ion-input>
+  </ion-item>
+
+  <ion-item class="error-message" *ngIf="!createFoodForm.controls.cost.valid  && (costChanged || submitAttempt)">
+      <p>Please enter a valid cost</p>
+  </ion-item>
+   
+  <ion-item>
+     <ion-buttons>
+      <button ion-button type="submit" block color="green" [disabled]="!createFoodForm.valid">CREATE FOOD RECORD</button>
+     </ion-buttons>
+  </ion-item>
+
+  </form>
+
+  <form [formGroup]="mapForm" (submit)="submit(mapForm.value)">
+
+  <ion-item>
+    <ion-label floating>Location</ion-label>
+    <ion-input #location formControlName="location" (change)= "elementChanged(location)" 
+    [class.invalid]="!mapForm.controls.location.valid && (locationChanged || submitAttempt)"></ion-input>
+  </ion-item>
+
+  <ion-item class="error-message" *ngIf="!mapForm.controls.location.valid  && (locationChanged || submitAttempt2)">
+      <p>Please enter a valid location</p>
+  </ion-item>
+
+
+   <ion-item>
+     <ion-buttons>
+      <button ion-button type="submit" block color="green" [disabled]="!mapForm.valid">GEOCODE</button>
+     </ion-buttons>
+   </ion-item>
+
+</form>
+
+ <div #map id="map"></div>
+
+    <ion-list>
+
+    <ion-item>
+    <ion-buttons>
+    <button ion-button full icon-left color="green" (click) = "imageUpload()"><ion-icon name="ios-reverse-camera-outline"></ion-icon>ADD PICTURE</button>
+
+     <button ion-button full color="green"><ion-icon name="ios-mic-outline"></ion-icon>ADD VOICE RECORD</button>
+     </ion-buttons>
+    </ion-item>
+
+    <ion-item>
+     <ion-buttons>
+      <button ion-button full color="green" (click) = "complete()">COMPLETE THIS STEP</button>
+     </ion-buttons>
+    </ion-item>
+
+   </ion-list>
+   
+</ion-content>

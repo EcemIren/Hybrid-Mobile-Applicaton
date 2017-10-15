@@ -1,0 +1,85 @@
+<!--
+  Generated template for the Steps page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    
+        <ion-toolbar>
+
+            <ion-title style="text-align:center">
+                <ion-icon name="ios-create" style="color:white"></ion-icon>
+                <span style="color: white">Create Tour</span>
+
+
+            </ion-title>
+
+            <button ion-button menuToggle color="light">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-toolbar>
+  
+
+   <ion-toolbar color = "dark">
+     <ion-title >SELECT A PATTERN</ion-title>
+   </ion-toolbar>
+   
+  </ion-header>
+
+<ion-content padding>
+
+
+    <ion-list>
+    <ion-item>
+ 
+        <ion-buttons>
+            <button ion-button full  (click)="goFoodPage()"><ion-icon name="restaurant"></ion-icon> ADD FOOD</button>
+           
+        </ion-buttons>
+    </ion-item>
+
+    <ion-item>
+        <ion-buttons>
+            <button ion-button full (click)="goAccommodationPage()"><ion-icon name="home"></ion-icon> ADD ACCOMMODATION</button>
+        </ion-buttons>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-buttons>
+            <button ion-button full (click)="goTransportationPage()"><ion-icon name="bus"></ion-icon> ADD TRANSPORTATION</button>
+        </ion-buttons>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-buttons>
+            <button ion-button full (click)="goSightseeingPage()"><ion-icon name="eye"></ion-icon> ADD SIGHTSEEING</button>
+        </ion-buttons>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-buttons>
+            <button ion-button full (click)="goShoppingPage()"><ion-icon name="cart"></ion-icon> ADD SHOPPING</button>
+        </ion-buttons>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-buttons>
+            <button ion-button full (click)="goActivityPage()"><ion-icon name="flag"></ion-icon> ADD ACTIVITY</button>
+        </ion-buttons>
+    </ion-item>
+ 
+    <ion-item >
+        <ion-buttons>
+            <button ion-button class="buttonLoc" color="dark" (click)="presentConfirm()">DONE</button>
+        </ion-buttons>
+    </ion-item>
+
+   </ion-list>
+
+</ion-content>

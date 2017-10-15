@@ -1,0 +1,134 @@
+<ion-header>
+
+    
+
+ 
+    <ion-toolbar>
+        <button ion-button menuToggle color="light">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title style="text-align:center">
+            <ion-icon name="ios-alarm" style="color:white"></ion-icon>
+            <span style="color: white">Current Schedule</span>
+
+
+        </ion-title>
+ </ion-toolbar>
+ </ion-header>
+
+
+<ion-content padding class="action-sheets-basic-page">
+   
+   <button ion-button full color="dark"> Upcoming Trips</button>
+
+    <ion-list style="background-color: red">
+       
+        <ion-item style="background-color: red">
+         
+            
+            <ion-card *ngFor="let item of planned" style="background-color: red">
+        <button ion-button full color="dark">{{item.name}}</button>
+        <button ion-button small color="dark" (click)="openMenu(item)">
+
+            <ion-icon name="alarm"></ion-icon>
+        </button>
+            <p class="text-right" style="color:black"><b>START DATE:</b>{{item.localDate}}</p>
+
+
+                <button class="buttonLoc" ion-button color="dark" small icon-left><ion-icon name="ios-pin"></ion-icon>{{item.country}}</button>
+                <ion-item style="background-color: red">
+                    <p class="text-right"><b>{{item.fee}}</b></p>
+                    <p class="text-right"><b>{{item.season}}</b></p>
+                    <p class="text-right"><b>{{item.name}}</b></p>
+ </ion-item>
+            
+                
+                <img src="./assets/images/italy.jpg" />
+
+                <ion-card-content>
+                    <p>{{item.description}}</p>
+
+                </ion-card-content>
+                <ion-item style="background-color: red">
+                    <span item-left>Approximate Fee:</span>
+                    <span item style="margin-left: 70px">{{item.fee}}</span>
+                </ion-item>
+                <ion-item style="background-color: red">
+                    <span item-left>Season:</span>
+                    <span item style="margin-left: 130px">{{item.season}}</span>
+                </ion-item>
+
+                <ion-item style="background-color: red">
+                    <span item-left>Tour Country:</span>
+                    <span item style="margin-left: 90px">{{item.country}}</span>
+
+                </ion-item>
+
+
+                <ion-item style="background-color: red">
+                    <span item-left>Tour Name:</span>
+                    <span item style="margin-left: 90px">{{item.name}}</span>
+
+                </ion-item>
+
+                <button class="buttonLoc" ion-button color="dark" (click)="goDetailPage(item.id,item.fee,item.season,item.name,item.country,item.description,true)">Tour Details</button>
+
+            </ion-card>
+        </ion-item>
+    </ion-list>
+
+
+   <ion-list style="background-color: red">
+        <button ion-button full color="dark">Recent Trips</button>
+
+        <ion-card *ngFor="let item of visited" style="background-color: red">
+        <button ion-button full color="dark">{{item.name}}</button>
+        <button ion-button small color="dark" (click)="openMenu(item)">
+
+          <ion-icon name="alarm"></ion-icon>
+        </button>
+
+                <button class="buttonLoc" ion-button color="dark" small icon-left><ion-icon name="ios-pin"></ion-icon>{{item.country}}</button>
+                <ion-item style="background-color: red">
+                    <p class="text-right"><b>{{item.fee}}</b></p>
+                    <p class="text-right"><b>{{item.season}}</b></p>
+                    <p class="text-right"><b>{{item.name}}</b></p>
+               </ion-item>
+            
+                
+                <img src="./assets/images/italy.jpg" />
+
+                <ion-card-content>
+                    <p>{{item.description}}</p>
+
+                </ion-card-content>
+                <ion-item style="background-color: red">
+                    <span item-left>Approximate Fee:</span>
+                    <span item style="margin-left: 70px">{{item.fee}}</span>
+                </ion-item>
+                <ion-item style="background-color: red">
+                    <span item-left>Season:</span>
+                    <span item style="margin-left: 130px">{{item.season}}</span>
+                </ion-item>
+
+                <ion-item style="background-color: red">
+                    <span item-left>Tour Country:</span>
+                    <span item style="margin-left: 90px">{{item.country}}</span>
+
+                </ion-item>
+
+
+                <ion-item style="background-color: red">
+                    <span item-left>Tour Name:</span>
+                    <span item style="margin-left: 90px">{{item.name}}</span>
+
+                </ion-item>
+
+                <button class="buttonLoc" ion-button color="dark" (click)="goDetailPage(item.id,item.fee,item.season,item.name,item.country,item.description,true)">Tour Details</button>
+
+            </ion-card>
+       
+    </ion-list>
+    
+</ion-content>

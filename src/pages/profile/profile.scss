@@ -1,0 +1,72 @@
+page-profile {
+   
+   ion-list
+   {
+     background-color : lightgoldenrodyellow;
+   }
+
+   .item-md
+   {
+    background-color : lightgoldenrodyellow;
+   
+   }
+
+   .item-md.item-block .item-inner
+   {
+     border:none;
+   }
+
+   h3
+   {
+     text-align:center;
+   }
+
+   .button-md
+   {
+     font-size: 1.6rem;
+   }
+
+   ion-label,h3
+   {
+     font-size: 23px;
+   }
+   
+  .toolbar-background {
+
+    background-color: lightgreen;
+   }
+
+  .toolbar
+  {
+    text-align:center;
+  }
+
+  .profileLink
+  {
+     text-decoration: none;
+  }
+
+ .custom-icon
+ {
+  font-size:40px;
+  color : green;
+ }
+
+ ion-avatar img
+ {
+   position: absolute;
+   top: 10px;
+   left: 5px;
+ }
+
+ .item-md ion-avatar img
+ {
+   width: 50px;
+   height: 50px;
+ }
+
+ ion-content{
+  background-image: url('../assets/images/t2.png');
+}
+
+}

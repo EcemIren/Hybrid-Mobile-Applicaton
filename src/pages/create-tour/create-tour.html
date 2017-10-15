@@ -1,0 +1,82 @@
+<!--
+  Generated template for the CreateTour page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar>
+
+   <button ion-button menuToggle style="color:white">
+     <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+        <ion-icon name="ios-create" style="color:white"></ion-icon>
+      <span style ="color: white">Create Tour</span>
+    </ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+ <form [formGroup]="createTourForm" (submit)="onSubmit(createTourForm.value)">
+     <p><b>*Tour Name needs min 8 character</b></p>
+<ion-item>
+   <ion-label floating>Tour Name</ion-label>
+   <ion-input #name formControlName="name" (change)= "elementChanged(name)" 
+   [class.invalid]="!createTourForm.controls.name.valid && (nameChanged || submitAttempt)"></ion-input>
+    </ion-item>
+
+
+ <ion-item class="error-message" *ngIf="!createTourForm.controls.name.valid && (nameChanged || submitAttempt)">
+      <p>Please enter a valid tour name</p>
+ </ion-item>
+
+  <ion-item>
+      <ion-label floating>Tour Country</ion-label>
+      <ion-input #country formControlName="country" (change)="elementChanged(country)"
+        [class.invalid]="!createTourForm.controls.country.valid && (countryChanged || submitAttempt)"></ion-input>
+  </ion-item>
+
+  <ion-item class="error-message" *ngIf="!createTourForm.controls.country.valid  && (countryChanged || submitAttempt)">
+      <p>Please enter a valid country</p>
+   </ion-item>
+
+    <ion-item>
+            <ion-label>Season</ion-label>
+            <ion-select multiple="false" formControlName="season">
+                <ion-option value="spring" checked="true">Spring</ion-option>
+                <ion-option value="winter">Winter</ion-option>
+                <ion-option value="autumn">Autumn</ion-option>
+                <ion-option value="summer">Summer</ion-option>
+             </ion-select>
+    </ion-item>
+
+     <ion-item>
+      <ion-label floating>Approximate Fee</ion-label>
+      <ion-input #fee formControlName="fee" type ="number" (change)="elementChanged(fee)" 
+        [class.invalid]="!createTourForm.controls.fee.valid && createTourForm.controls.fee.dirty && (feeChanged || submitAttempt)" ></ion-input>
+  </ion-item>
+
+  <ion-item class="error-message" *ngIf="!createTourForm.controls.fee.valid  && createTourForm.controls.fee.dirty && (feeChanged || submitAttempt)">
+      <p>Please enter a valid fee</p>
+   </ion-item>
+     <ion-item>
+         <ion-label floating>Description</ion-label>
+         <ion-input #description formControlName="description" (change)="elementChanged(description)"
+                    [class.invalid]="!createTourForm.controls.description.valid && (descriptionChanged || submitAttempt)"></ion-input>
+     </ion-item>
+
+     <ion-item class="error-message" *ngIf="!createTourForm.controls.description.valid  && (descriptionChanged || submitAttempt)">
+         <p>Please enter a valid country</p>
+     </ion-item>
+        <br/><br/>
+        <button ion-button block type="submit" color="dark" [disabled]="!createTourForm.valid">Submit</button>
+    </form>
+
+</ion-content>
